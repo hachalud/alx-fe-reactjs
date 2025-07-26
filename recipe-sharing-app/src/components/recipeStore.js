@@ -16,7 +16,22 @@ const useRecipeStore = create((set) => ({
       ingredients: ["lettuce", "tomato", "olive oil"],
       cookTime: 10,
     },
+    {
+      id: 3,
+      title: "Pizza",
+      description: "Cheesy pizza with pepperoni and olives.",
+      ingredients: ["dough", "cheese", "pepperoni", "olives"],
+      cookTime: 25,
+    },
+    {
+      id: 4,
+      title: "Soup",
+      description: "Hot chicken soup with noodles.",
+      ingredients: ["chicken", "noodles", "carrot", "salt"],
+      cookTime: 30,
+    },
   ],
+
   filteredRecipes: [],
   searchTerm: "",
   ingredientFilter: "",
@@ -70,6 +85,30 @@ const useRecipeStore = create((set) => ({
           : recipe
       ),
     })),
+
+  favorites: [],
+
+  addFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.includes(recipeId)
+        ? state.favorites
+        : [...state.favorites, recipeId],
+    })),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  recommendations: [],
+
+  generateRecommendations: () =>
+    set((state) => {
+      const recommended = state.recipes.filter(
+        (recipe) => !state.favorites.includes(recipe.id) && Math.random() > 0.5
+      );
+      return { recommendations: recommended };
+    }),
 }));
 
 export default useRecipeStore;

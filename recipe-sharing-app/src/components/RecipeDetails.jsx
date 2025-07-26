@@ -3,6 +3,7 @@ import useRecipeStore from "./recipeStore";
 import EditRecipeForm from "./EditRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";
 import AddRecipeForm from "./AddRecipeForm";
+import SearchBar from "./SearchBar";
 const RecipeDetails = () => {
   const { id } = useParams();
   const recipe = useRecipeStore((state) =>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchUserData } from "../services/githubService";
 
-const SearchBar = () => {
+const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -56,4 +56,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Search;

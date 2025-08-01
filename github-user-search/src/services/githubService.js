@@ -1,21 +1,12 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.github.com";
+const BASE_URL = "https://api.github.com/users";
 
-export const searchUsers = async (username) => {
+export const fetchUserData = async (username) => {
   try {
-    const response = await axios.get(`${BASE_URL}/search/users`, {
-      params: { q: username },
-    });
+    const response = await axios.get(`${BASE_URL}/${username}`);
     return response.data;
   } catch (error) {
-    console.error("GitHub user search failed:", error.message);
-    throw error;
+    throw new Error("User not found");
   }
 };
-if (!navigator.onLine) {
-  alert("You are offline. Please check your internet connection.");
-} else {
-  searchUsers("username");
-}
-

@@ -11,7 +11,7 @@ function UserProfile() {
         src="https://via.placeholder.com/150"
         alt="User"
       />
-      <h1 class="text-lg sm:text-lg md:text-xl text-blue-800 my-4 font-semibold hover:text-blue-600">
+      <h1 class="text-lg sm:text-lg md:text-xl text-blue-800 my-4 font-semibold hover:text-blue-500">
         John Doe
       </h1>
       <p class="text-sm sm:text-sm md:text-base text-gray-600 px-2">

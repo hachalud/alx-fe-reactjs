@@ -7,7 +7,7 @@ function UserProfile() {
       className="user-profile"
     >
       <img
-        class="rounded-full w-36 h-36 md:w-36 md:h-36 mx-auto"
+        class="rounded-full w-36 h-36 md:w-36 md:h-36 mx-auto sm:w-24 sm:h-24"
         src="https://via.placeholder.com/150"
         alt="User"
       />

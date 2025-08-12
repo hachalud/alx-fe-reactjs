@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://as1.ftcdn.net/jpg/13/76/34/58/1000_F_1376345817_KWeE97m8OHONGAcAibZj1UA2v6swH03x.webp"
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A quick and healthy dish made with a variety of vegetables stir-fried in a savory sauce.",
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg?quality=90"
+  },
+  {
+    "id": 4,
+    "title": "Beef Tacos",
+    "summary": "Soft or hard shell tacos filled with seasoned ground beef, lettuce, cheese, and salsa.",
+    "image": "https://as1.ftcdn.net/jpg/13/76/34/58/1000_F_1376345817_KWeE97m8OHONGAcAibZj1UA2v6swH03x.webp"
+  }
+]

@@ -41,12 +41,12 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+    <div className="min-h-screen bg-gray-100 p-4 md:p-10 flex justify-center items-center">
+      <div className="bg-white p-6 md:p-10 rounded-xl shadow-lg w-full max-w-lg md:max-w-2xl">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
           Add a New Recipe
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           {/* Title */}
           <div>
             <label className="block text-gray-700 font-semibold mb-2">
@@ -72,7 +72,7 @@ const AddRecipeForm = () => {
             <textarea
               value={ingredients}
               onChange={(e) => setIngredients(e.target.value)}
-              className="w-full border rounded-lg p-3 h-24 focus:ring-2 focus:ring-blue-400"
+              className="w-full border rounded-lg p-3 h-24 md:h-32 focus:ring-2 focus:ring-blue-400"
               placeholder="e.g., sugar, flour, eggs"
             ></textarea>
             {errors.ingredients && (
@@ -88,7 +88,7 @@ const AddRecipeForm = () => {
             <textarea
               value={steps}
               onChange={(e) => setSteps(e.target.value)}
-              className="w-full border rounded-lg p-3 h-32 focus:ring-2 focus:ring-blue-400"
+              className="w-full border rounded-lg p-3 h-32 md:h-40 focus:ring-2 focus:ring-blue-400"
               placeholder="Describe the preparation steps..."
             ></textarea>
             {errors.steps && (
@@ -100,7 +100,7 @@ const AddRecipeForm = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300"
+              className="bg-blue-600 text-white font-semibold py-2 px-6 md:px-8 rounded-lg hover:bg-blue-700 transition duration-300"
             >
               Add Recipe
             </button>

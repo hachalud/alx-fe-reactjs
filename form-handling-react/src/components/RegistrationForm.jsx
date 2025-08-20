@@ -8,25 +8,26 @@ const RegistrationForm = () => {
   });
   const [errors, setErrors] = useState({});
 
+  const { username, email, password } = formData;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Form validation
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username) {
+    if (!username) {
       newErrors.username = "Username is required";
     }
-    if (!formData.email) {
+    if (!email) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "Email is invalid";
     }
-    if (!formData.password) {
+    if (!password) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
+    } else if (password.length < 6) {
       newErrors.password = "Password must be at least 6 characters long";
     }
     return newErrors;
@@ -37,7 +38,7 @@ const RegistrationForm = () => {
     const formError = validateForm();
     if (Object.keys(formError).length === 0) {
       console.log("Form submitted:", formData);
-      alert(`Welcome ${formData.username}!`);
+      alert(`Welcome ${username}!`);
       setFormData({ username: "", email: "", password: "" });
       setErrors({});
     } else {
@@ -51,7 +52,7 @@ const RegistrationForm = () => {
         <input
           type="text"
           name="username"
-          value={formData.username}
+          value={username}
           onChange={handleChange}
           placeholder="Username"
         />
@@ -62,7 +63,7 @@ const RegistrationForm = () => {
         <input
           type="email"
           name="email"
-          value={formData.email}
+          value={email}
           onChange={handleChange}
           placeholder="Email"
         />
@@ -73,7 +74,7 @@ const RegistrationForm = () => {
         <input
           type="password"
           name="password"
-          value={formData.password}
+          value={password}
           onChange={handleChange}
           placeholder="Password"
         />

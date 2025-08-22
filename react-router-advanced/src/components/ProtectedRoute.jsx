@@ -1,24 +1,14 @@
-import { useState, createContext, useContext } from "react";
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
-const AuthContext = createContext(null);
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useAuth();
 
-export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
-
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
   }
-  return context;
+
+  return children;
 };
+
+export default ProtectedRoute;
